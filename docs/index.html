@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виктория Водовозова | ITMO Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #003f73;
+            --secondary-color: #00a1e4;
+            --accent-color: #ff6b35;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        section {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+            display: inline-block;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-color);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-name {
+            font-weight: 600;
+        }
+
+        .skill-level {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 63, 115, 0.2);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .project-description {
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(0, 63, 115, 0.1);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .degree {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .education-date {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .institution {
+            color: var(--gray-color);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievements-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .achievements-list li {
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
+            background: var(--light-color);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .achievements-list li::before {
+            content: '🏆';
+            font-size: 1.5rem;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 63, 115, 0.3);
+        }
+
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .header-content, .container {
+                padding: 0 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .projects-grid,
+            .skills-container,
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="profile-img">V</div>
+            <h1>Виктория Водовозова</h1>
+            <p class="subtitle">Студентка первого курса ИТМО | Программист</p>
+            <div class="contact-info">
+                <div class="contact-item">📧 vikavodovozova@email.com</div>
+                <div class="contact-item">📱 +7 (XXX) XXX-XX-XX</div>
+                <div class="contact-item">📍 Санкт-Петербург, Россия</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p class="about-text">
+                Привет! Я Виктория, студентка первого курса Университета ИТМО. С детства увлекаюсь программированием и технологиями.
+                В 18 лет я начала свой путь в мире IT, и каждый день приносит новые знания и возможности для роста.
+                Я стремлюсь развиваться в области разработки программного обеспечения и машинного обучения.
+                Учусь быстро адаптироваться к новым технологиям и люблю работать над интересными проектами.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Навыки</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Языки программирования</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">Python</span> <span class="skill-level">Продвинутый</span></li>
+                        <li><span class="skill-name">JavaScript</span> <span class="skill-level">Средний</span></li>
+                        <li><span class="skill-name">HTML/CSS</span> <span class="skill-level">Средний</span></li>
+                        <li><span class="skill-name">SQL</span> <span class="skill-level">Начальный</span></li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Фреймворки и технологии</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">Flask</span> <span class="skill-level">Средний</span></li>
+                        <li><span class="skill-name">React</span> <span class="skill-level">Начальный</span></li>
+                        <li><span class="skill-name">Git</span> <span class="skill-level">Средний</span></li>
+                        <li><span class="skill-name">Docker</span> <span class="skill-level">Начальный</span></li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Инструменты</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">PyCharm</span> <span class="skill-level">Продвинутый</span></li>
+                        <li><span class="skill-name">VS Code</span> <span class="skill-level">Продвинутый</span></li>
+                        <li><span class="skill-name">Postman</span> <span class="skill-level">Средний</span></li>
+                        <li><span class="skill-name">Linux</span> <span class="skill-level">Средний</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Проекты</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Лабораторная работа №11</h3>
+                    <p class="project-description">Разработка системы с декораторами для логирования и обработки ошибок. Использование unittest для тестирования.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Decorators</span>
+                        <span class="tech-tag">unittest</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Flask Web Application</h3>
+                    <p class="project-description">Командный проект по созданию веб-приложения с использованием фреймворка Flask и модульной архитектуры.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Team Project</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Quadratic Equation Solver</h3>
+                    <p class="project-description">Программа для решения квадратных уравнений с полной системой логирования и обработки исключений.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Logging</span>
+                        <span class="tech-tag">Error Handling</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Образование</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="degree">Бакалавриат, Информатика и вычислительная техника</span>
+                    <span class="education-date">2025 - настоящее время</span>
+                </div>
+                <div class="institution">Университет ИТМО, Санкт-Петербург</div>
+                <p>Первый курс. Специализация: Программная инженерия и разработка ПО.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="degree">Среднее общее образование</span>
+                    <span class="education-date">2023 - 2025</span>
+                </div>
+                <div class="institution">Школа №XXX, Санкт-Петербург</div>
+                <p>Углубленное изучение математики и информатики. Участие в олимпиадах по программированию.</p>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Достижения</h2>
+            <ul class="achievements-list">
+                <li>Успешная сдача экзамена по Python (18/20 баллов)</li>
+                <li>Участие в организации крупных университетских мероприятий</li>
+                <li>Разработка и тестирование сложных программных систем</li>
+                <li>Изучение передовых технологий в области разработки ПО</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Связаться со мной</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Отправить сообщение</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Виктория Водовозова. Все права защищены.</p>
+        <div class="social-links">
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">Telegram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Плавная прокрутка к секциям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Анимация при прокрутке
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Валидация формы
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за ваше сообщение! Я свяжусь с вами в ближайшее время.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
