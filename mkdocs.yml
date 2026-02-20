@@ -1,0 +1,72 @@
+# mkdocs.yml — конфигурация для портфолио Виктории Водовозовой
+site_name: Виктория Водовозова | Портфолио
+site_url: https://viktoriavodovozova.github.io
+repo_url: https://github.com/viktoriavodovozova/viktoriavodozova.github.io
+edit_uri: edit/main/source/docs/
+
+# Где лежат исходные .md файлы
+docs_dir: source/docs
+
+# Куда собирать HTML (для GitHub Pages)
+site_dir: docs
+
+# Тема: Material — современная, адаптивная, красивая
+theme:
+  name: material
+  palette:
+    # Светлая тема по умолчанию
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep-purple
+      toggle:
+        icon: material/brightness-7
+        name: Переключить на тёмную тему
+    # Тёмная тема (автоматически или по клику)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Переключить на светлую тему
+  features:
+    - navigation.top          # навигация сверху
+    - navigation.tracking     # отслеживание URL при прокрутке
+    - search.highlight        # подсветка в поиске
+    - content.code.copy       # кнопка "копировать" в коде
+  font:
+    text: Roboto
+    code: Fira Code
+
+# Навигация по сайту
+nav:
+  - Главная: index.md
+  - Обо мне: about.md
+  - Проекты: projects.md
+  - Контакты: contact.md
+
+# Плагины (поиск и дата последнего изменения)
+plugins:
+  - search
+
+
+# Дополнительно: соцсети в футере (опционально)
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/viktoriavodovozova
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/@Vvvikkktoriia
+    - icon: fontawesome/solid/envelope
+      link: mailto:Vikktoriaa2508@mail.ru
+
+# Язык и кодировка
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
