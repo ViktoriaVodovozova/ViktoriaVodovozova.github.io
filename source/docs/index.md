@@ -1,7 +1,7 @@
 # Welcome to MkDocs
 
 Привет-привет! Работа Работа 
-прога прога
+прога прога прога
 
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
