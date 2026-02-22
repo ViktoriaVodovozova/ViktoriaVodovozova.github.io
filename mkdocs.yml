@@ -30,6 +30,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Переключить на светлую тему
+  logo: assets/images/IMG_7767.jpg
   features:
     - navigation.top          # навигация сверху
     - navigation.tracking     # отслеживание URL при прокрутке
