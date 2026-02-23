@@ -47,6 +47,7 @@ nav:
   - Проекты: projects.md
   - Лабораторные работы:
       - ЛР1: labs/lab1.md
+      - ЛР8/9: labs/lab8and9.md
       - ЛР10: labs/lab10.md
       - ЛР11: labs/lab11.md
   - Контакты: contact.md
