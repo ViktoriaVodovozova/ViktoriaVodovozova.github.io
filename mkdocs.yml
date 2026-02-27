@@ -1,4 +1,3 @@
-# mkdocs.yml — конфигурация для портфолио Виктории Водовозовой
 site_name: Виктория Водовозова | Портфолио
 site_url: https://viktoriavodovozova.github.io
 repo_url: https://github.com/viktoriavodovozova/viktoriavodozova.github.io
@@ -10,7 +9,7 @@ docs_dir: source/docs
 # Куда собирать HTML (для GitHub Pages)
 site_dir: docs
 
-# Тема: Material — современная, адаптивная, красивая
+# Тема: Material
 theme:
   name: material
   palette:
@@ -57,7 +56,7 @@ plugins:
   - search
 
 
-# Дополнительно: соцсети в футере (опционально)
+# Дополнительно: соцсети в футере
 extra:
   social:
     - icon: fontawesome/brands/github
