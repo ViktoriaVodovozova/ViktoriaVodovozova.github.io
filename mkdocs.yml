@@ -24,7 +24,7 @@ theme:
     # Тёмная тема (автоматически или по клику)
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: pink
       accent: purple
       toggle:
         icon: material/brightness-4
