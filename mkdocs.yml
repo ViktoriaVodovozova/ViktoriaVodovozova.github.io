@@ -45,10 +45,12 @@ nav:
   - Обо мне: about.md
   - Проекты: projects.md
   - Лабораторные работы:
-      - ЛР1: labs/lab1.md
-      - ЛР8/9: labs/lab8and9.md
-      - ЛР10: labs/lab10.md
-      - ЛР11: labs/lab11.md
+      - ЛР1sem2: labs/lab1sem2.md
+      - ЛР2sem2: labs/lab2sem2.md
+      - ЛР3sem2: labs/lab3sem2.md
+      - ЛР4sem2: labs/lab4sem2.md
+      - ЛР10sem1: labs/lab10sem1.md
+      - ЛР11sem1: labs/lab11sem1.md
   - Контакты: contact.md
 
 # Плагины (поиск и дата последнего изменения)
