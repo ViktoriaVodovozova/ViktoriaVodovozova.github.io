@@ -25,16 +25,17 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: pink
-      accent: purple
+      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Переключить на светлую тему
   logo: assets/images/IMG_7767.jpg
   features:
     - navigation.top          # навигация сверху
-    - navigation.tracking     # отслеживание URL при прокрутке
-    - search.highlight        # подсветка в поиске
-    - content.code.copy       # кнопка "копировать" в коде
+    - navigation.tabs
+    - navigation.sections       # подсветка в поиске
+    - content.code.copy   # кнопка "копировать" в коде
+
   font:
     text: Roboto
     code: Fira Code
@@ -42,8 +43,6 @@ theme:
 # Навигация по сайту
 nav:
   - Главная: index.md
-  - Обо мне: about.md
-  - Проекты: projects.md
   - Лабораторные работы:
       - Создание статического сайта: labs/lab1sem2.md
       - Основы NumPy: labs/lab2sem2.md
@@ -55,6 +54,7 @@ nav:
       - Скрапинг и анализ текста: labs/lab8sem2.md
       - Работа с графикой. CI/CD. Артефакты: labs/lab9sem2.md
       - ЛР10сем1: labs/lab10sem1.md
+  - Проекты: projects.md
   - Контакты: contact.md
 
 # Плагины (поиск и дата последнего изменения)
@@ -66,11 +66,10 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/viktoriavodovozova
+      link: https://github.com/ViktoriaVodovozova
     - icon: fontawesome/brands/telegram
       link: https://t.me/@Vvvikkktoriia
-    - icon: fontawesome/solid/envelope
-      link: mailto:Vikktoriaa2508@mail.ru
+
 
 # Язык и кодировка
 markdown_extensions:
