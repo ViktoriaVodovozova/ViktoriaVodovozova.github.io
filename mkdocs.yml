@@ -47,16 +47,16 @@ nav:
       - Создание статического сайта: labs/lab1sem2.md
       - Основы NumPy: labs/lab2sem2.md
       - CI/CD для статического сайта в SourceCraft: labs/lab3sem2.md
-      - Классификация с применением Scikit-Learn: labs/lab4sem2.md
       - Регрессия с применением Scikit-Learn: labs/lab5sem2.md
-      - Очистка и трансформация данных. pandas: labs/lab6sem2.md
+      - Очистка и трансформация данных. Pandas: labs/lab6sem2.md
       - Анализ текста: labs/lab7sem2.md
       - Скрапинг и анализ текста: labs/lab8sem2.md
       - Работа с графикой. CI/CD. Артефакты: labs/lab9sem2.md
-      - ЛР10сем1: labs/lab10sem1.md
-  - Проекты: projects.md
-  - Контакты: contact.md
-
+  - Проекты:
+      - Хакатон от "Газпром нефти": projects/Proj_1.md
+      - Сервис по оценке вероятности одобрения ипотеки: projects/Proj_2.md
+      - Разработка нейронной сети: projects/Proj_3.md
+  - Контактная информация: contact.md
 # Плагины (поиск и дата последнего изменения)
 plugins:
   - search

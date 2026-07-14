@@ -1,7 +1,7 @@
-# Контактная информация
+# **Контактная информация**
 
 ### Modile phone
-[+79910232055](+79910232055)
+[+7910232055](tel:+7910232055)
 ### Email
 [Vikktoriaa2508@mail.ru](mailto:Vikktoriaa2508@mail.ru)
 ### Telegram
@@ -9,10 +9,10 @@
 
 
 
-## Ссылки на рабочие платформы
+## **Ссылки на рабочие платформы**
 ### GitHub
 [github.com/viktoriavodovozova](https://github.com/viktoriavodovozova)
 ### SourceCraft 
-
+- [SourceCraft](https://sourcecraft.dev/users/nphne-7npjuqbs/overview)
 ## Расположение
 Санкт-Петербург, Россия
